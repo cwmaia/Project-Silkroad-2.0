@@ -1,12 +1,13 @@
 import { initializeApp } from "firebase/app";
 
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+export const firebaseConfig = {
+  apiKey: "AIzaSyArKXLe0Anb2-Hjo4NQfQ8oBwce8Ht5jOo",
+  authDomain: "project-silkroad.firebaseapp.com",
+  projectId: "project-silkroad",
+  storageBucket: "project-silkroad.firebasestorage.app",
+  messagingSenderId: "407212207739",
+  appId: "1:407212207739:web:e9e823ce9d605d489d7cde",
+  measurementId: "G-HE1WLB7VVM"
 };
 
 export const app = initializeApp(firebaseConfig);
