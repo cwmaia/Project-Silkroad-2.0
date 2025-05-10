@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { getAuth } from 'firebase/auth';
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
+import DifficultySelector from './DifficultySelector';
 
 const HomeScreen: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [sessionExists, setSessionExists] = useState(false);
   const [email, setEmail] = useState<string | null>(null);
+  const [isDifficultySelectorOpen, setIsDifficultySelectorOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,6 +43,15 @@ const HomeScreen: React.FC = () => {
     fetchData();
   }, []);
 
+  const handleNewGame = () => {
+    setIsDifficultySelectorOpen(true);
+  };
+
+  const handleConfirmDifficulty = (difficulty: string) => {
+    console.log(`Selected difficulty: ${difficulty}`);
+    setIsDifficultySelectorOpen(false);
+  };
+
   if (loading) {
     return <div className="text-white text-center">Loading...</div>;
   }
@@ -61,12 +72,18 @@ const HomeScreen: React.FC = () => {
         </button>
       ) : (
         <button
-          onClick={() => console.log('New Game button clicked')}
+          onClick={handleNewGame}
           className="px-6 py-3 bg-green-500 text-white font-semibold rounded hover:bg-green-600"
         >
           New Game
         </button>
       )}
+
+      <DifficultySelector
+        isOpen={isDifficultySelectorOpen}
+        onClose={() => setIsDifficultySelectorOpen(false)}
+        onConfirm={handleConfirmDifficulty}
+      />
     </div>
   );
 };
