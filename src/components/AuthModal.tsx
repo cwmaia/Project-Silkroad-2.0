@@ -15,25 +15,33 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
   const [password, setPassword] = useState("");
   const [mode, setMode] = useState("signin"); // 'signin' or 'signup'
   const [error, setError] = useState<string | null>(null);
+  const [status, setStatus] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
+    setStatus("Connecting...");
+
     const auth = getAuth(app);
 
     try {
       await setPersistence(auth, browserLocalPersistence);
 
       if (mode === "signin") {
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        console.log("Signed in user:", userCredential.user);
+        const userCred = await signInWithEmailAndPassword(auth, email, password);
+        console.log("✅ Signed in:", userCred.user);
+        setStatus("Signed in successfully.");
+        onClose(); // close modal
       } else {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        console.log("Created user:", userCredential.user);
+        const userCred = await createUserWithEmailAndPassword(auth, email, password);
+        console.log("✅ Account created:", userCred.user);
+        setStatus("Account created successfully.");
+        onClose(); // close modal
       }
-
-      setError(null); // Clear any previous errors
     } catch (err: any) {
+      console.error("❌ Auth error:", err);
       setError(err.message);
+      setStatus(null);
     }
   };
 
@@ -48,7 +56,8 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
             {mode === "signin" ? "Sign in to your account" : "Create a new account"}
           </Dialog.Description>
 
-          {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+          {status && <p className="text-green-400 text-sm mt-2">{status}</p>}
+          {error && <p className="text-red-400 text-sm mt-2">{error}</p>}
 
           <form onSubmit={handleSubmit} className="mt-4">
             <input
