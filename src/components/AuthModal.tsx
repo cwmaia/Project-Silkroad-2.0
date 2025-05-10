@@ -1,7 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Dialog } from '@headlessui/react';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, setPersistence, browserLocalPersistence } from "firebase/auth";
+import { app } from "../firebase";
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -9,19 +11,80 @@ interface AuthModalProps {
 }
 
 const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [mode, setMode] = useState("signin"); // 'signin' or 'signup'
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const auth = getAuth(app);
+
+    try {
+      await setPersistence(auth, browserLocalPersistence);
+
+      if (mode === "signin") {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        console.log("Signed in user:", userCredential.user);
+      } else {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        console.log("Created user:", userCredential.user);
+      }
+
+      setError(null); // Clear any previous errors
+    } catch (err: any) {
+      setError(err.message);
+    }
+  };
+
   return (
     <Dialog open={isOpen} onClose={onClose} className="fixed inset-0 z-10 overflow-y-auto">
       <div className="flex items-center justify-center min-h-screen px-4">
-        <Dialog.Overlay className="fixed inset-0 bg-black opacity-50" />
+        <div className="fixed inset-0 bg-black opacity-50" />
 
         <div className="bg-white rounded-lg max-w-sm mx-auto p-6">
-          <Dialog.Title className="text-lg font-bold">Authentication Modal</Dialog.Title>
+          <Dialog.Title className="text-lg font-bold">Authentication</Dialog.Title>
           <Dialog.Description className="mt-2 text-sm text-gray-600">
-            Modal content goes here...
+            {mode === "signin" ? "Sign in to your account" : "Create a new account"}
           </Dialog.Description>
+
+          {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+
+          <form onSubmit={handleSubmit} className="mt-4">
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-2 border rounded mb-2"
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-4 py-2 border rounded mb-4"
+              required
+            />
+            <button
+              type="submit"
+              className="w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            >
+              {mode === "signin" ? "Sign In" : "Sign Up"}
+            </button>
+          </form>
+
+          <button
+            onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
+            className="mt-4 text-blue-500 hover:underline"
+          >
+            {mode === "signin" ? "Don't have an account? Sign Up" : "Already have an account? Sign In"}
+          </button>
+
           <button
             onClick={onClose}
-            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            className="mt-4 px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600"
           >
             Close
           </button>
