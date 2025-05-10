@@ -8,9 +8,10 @@ import { app } from "../firebase";
 interface AuthModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onAuthSuccess: () => void;
 }
 
-const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
+const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onAuthSuccess }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [mode, setMode] = useState("signin"); // 'signin' or 'signup'
@@ -31,16 +32,28 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
         const userCred = await signInWithEmailAndPassword(auth, email, password);
         console.log("✅ Signed in:", userCred.user);
         setStatus("Signed in successfully.");
-        onClose(); // close modal
+        onAuthSuccess(); // Notify parent component
+        onClose(); // Close modal
       } else {
         const userCred = await createUserWithEmailAndPassword(auth, email, password);
         console.log("✅ Account created:", userCred.user);
         setStatus("Account created successfully.");
-        onClose(); // close modal
+        onAuthSuccess(); // Notify parent component
+        onClose(); // Close modal
       }
     } catch (err: any) {
       console.error("❌ Auth error:", err);
-      setError(err.message);
+      if (err.code === "auth/invalid-email") {
+        setError("Invalid email address.");
+      } else if (err.code === "auth/user-not-found") {
+        setError("No user found with this email.");
+      } else if (err.code === "auth/wrong-password") {
+        setError("Incorrect password.");
+      } else if (err.code === "auth/invalid-credential") {
+        setError("Invalid credentials provided.");
+      } else {
+        setError("An unknown error occurred. Please try again.");
+      }
       setStatus(null);
     }
   };

@@ -3,7 +3,11 @@
 import React, { useState } from 'react';
 import AuthModal from './AuthModal';
 
-const LandingScreen: React.FC = () => {
+interface LandingScreenProps {
+  onAuthSuccess: () => void;
+}
+
+const LandingScreen: React.FC<LandingScreenProps> = ({ onAuthSuccess }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -17,7 +21,11 @@ const LandingScreen: React.FC = () => {
         >
           Access Network
         </button>
-        <AuthModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+        <AuthModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          onAuthSuccess={onAuthSuccess}
+        />
       </div>
     </div>
   );
