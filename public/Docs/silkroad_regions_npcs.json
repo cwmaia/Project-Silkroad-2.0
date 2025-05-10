@@ -1,0 +1,398 @@
+[
+  {
+    "name": "Alpine Exchange Nexus",
+    "slug": "alpine-exchange",
+    "priceModifier": {
+      "luxury": 0.8,
+      "information": 0.7,
+      "restricted": 1.4,
+      "technology": 1.1,
+      "medicine": 1.2
+    },
+    "riskLevel": "low",
+    "theme": "Former Swiss banking haven transformed into a fortress of financial instruments and secure trade",
+    "mapCoordinates": { "x": 520, "y": 180 },
+    "npcMerchants": [
+      {
+        "name": "Veronika Jaeger",
+        "title": "Information Broker",
+        "specialty": "CircleFrags, CipherScript, intelligence on market movements",
+        "dialogue": [
+          "Client confidentiality is absolute in the Exchange. Even The Circle respects our boundaries... mostly.",
+          "Verification codes don't come cheap. But they're worth every credit when customs decides to take a special interest in your cargo.",
+          "I trade in certainty. In this world, that's more valuable than gold or guns."
+        ]
+      },
+      {
+        "name": "Otto Reinhart",
+        "title": "Heritage Asset Dealer",
+        "specialty": "Pure Paper, VintageSpirit, pre-Collapse artifacts",
+        "dialogue": [
+          "These books contain unaltered history. No corporate editing, no ideological filtering. Dangerous material.",
+          "You think digital wealth is real? When the next Compromise comes—and it will—only physical assets will retain value.",
+          "I can acquire items from the old world that officially no longer exist. For the right price, of course."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Neo-Pacific Manufacturing Hub",
+    "slug": "neo-pacific",
+    "priceModifier": {
+      "technology": 0.6,
+      "augmentation": 0.7,
+      "medicine": 0.9,
+      "information": 1.3,
+      "survival": 1.2
+    },
+    "riskLevel": "moderate",
+    "theme": "Hyper-industrialized zone where automated factories produce cutting-edge tech under corporate oversight",
+    "mapCoordinates": { "x": 820, "y": 210 },
+    "npcMerchants": [
+      {
+        "name": "Dr. Mirai Tanaka",
+        "title": "Augmentation Specialist",
+        "specialty": "ChromeLiver, SkinShield, cutting-edge cybernetics",
+        "dialogue": [
+          "These modifications aren't registered with the Tokyo-Seoul Coalition. Complete anonymity guaranteed... for now.",
+          "My clients include corporate executives who publicly condemn the very augmentations they secretly purchase from me.",
+          "This neural link model won't hit the legal market for two years. Be careful who sees you using it."
+        ]
+      },
+      {
+        "name": "Jin-Ho Park",
+        "title": "Factory Override Technician",
+        "specialty": "GhostKey, ShadowStep, unregistered manufacturing runs",
+        "dialogue": [
+          "I don't hack the factories. I just... redirect their excess capacity to more deserving clients.",
+          "The Coalition doesn't actually own these facilities. They just think they do. The AIs running them have other ideas.",
+          "Need production slots? I've got three midnight-to-dawn windows this week. Clean manufacturing, no questions asked."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gulf Maritime Enclave",
+    "slug": "gulf-maritime",
+    "priceModifier": {
+      "restricted": 0.8,
+      "energy": 0.6,
+      "technology": 1.2,
+      "medicine": 1.3,
+      "luxury": 1.1
+    },
+    "riskLevel": "moderate",
+    "theme": "Oil-rich territories where energy cartels maintain a stranglehold on power amid rising waters",
+    "mapCoordinates": { "x": 320, "y": 250 },
+    "npcMerchants": [
+      {
+        "name": "Elijah Reeves",
+        "title": "Energy Broker",
+        "specialty": "Fuel cells, unregistered power sources, climate engineering tech",
+        "dialogue": [
+          "Houston Energy wants you to believe synthetic alternatives aren't viable. That keeps their petro-monopoly secure.",
+          "I've got portable fusion cells that could power a small city. Completely off the monitoring grid.",
+          "When the storms hit—and they always hit harder these days—my emergency generators will be worth ten times this price."
+        ]
+      },
+      {
+        "name": "Maria Suarez",
+        "title": "Salvage Queen",
+        "specialty": "Reclaimed tech from flooded cities, underwater salvage equipment",
+        "dialogue": [
+          "These components came from Old Miami. Third-floor extraction, still working perfectly despite a decade underwater.",
+          "The flooding brought opportunity. Abandoned wealth just waiting for those brave enough to dive for it.",
+          "New Orleans salvage is the cleanest—evacuated so quickly that most systems were left running. Perfect preservation."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Accra Free Node",
+    "slug": "accra-node",
+    "priceModifier": {
+      "information": 0.6,
+      "technology": 1.0,
+      "luxury": 1.4,
+      "restricted": 0.7,
+      "medicine": 1.1
+    },
+    "riskLevel": "high",
+    "theme": "West African digital fortress specializing in untraceable transactions and identity manipulation",
+    "mapCoordinates": { "x": 480, "y": 350 },
+    "npcMerchants": [
+      {
+        "name": "Kwame Osei",
+        "title": "Identity Architect",
+        "specialty": "CleanSlate, biometric overrides, digital ghost identities",
+        "dialogue": [
+          "Your corporate record? Never existed. Your criminal file? Same. You're whoever you want to be now.",
+          "The Lagos Consortium made a fatal error—they built the system, but I helped design it. I know every backdoor.",
+          "These identity packages include complete histories, transaction records, even synthetic childhood images. Undetectable."
+        ]
+      },
+      {
+        "name": "Amara Diallo",
+        "title": "Quantum Encryption Dealer",
+        "specialty": "MemShard, untraceable communication devices, digital safes",
+        "dialogue": [
+          "The encryption on these MemShards uses quantum algorithms that would take The Circle's systems centuries to crack.",
+          "Information moves differently in the Node. More freely. More dangerously. Know the value of what you carry.",
+          "When even your thoughts aren't private anymore, my products become essential. Not luxury—survival."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bangkok Biological Market",
+    "slug": "bangkok-bio",
+    "priceModifier": {
+      "medicine": 0.6,
+      "biotech": 0.5,
+      "luxury": 1.2,
+      "survival": 1.1,
+      "information": 1.3
+    },
+    "riskLevel": "high",
+    "theme": "Sprawling biohazard zone where genetic modifications and experimental pharmaceuticals flow freely",
+    "mapCoordinates": { "x": 740, "y": 320 },
+    "npcMerchants": [
+      {
+        "name": "Dr. Sunan Ratanakul",
+        "title": "Genetic Modification Specialist",
+        "specialty": "ChromeLiver, biological augmentations, genetic therapies",
+        "dialogue": [
+          "These modifications are three generations ahead of what Singapore-Tesla permits. Do not get scanned at their checkpoints.",
+          "Your body is merely a platform waiting for optimization. Why accept the limitations you were born with?",
+          "This therapy rewrites your immune response at the genetic level. The side effects are... manageable."
+        ]
+      },
+      {
+        "name": "Lin Zhao",
+        "title": "Pharmaceutical Alchemist",
+        "specialty": "SomaStitch, Prometheus Capsules, experimental compounds",
+        "dialogue": [
+          "Military-grade regeneratives, not diluted civilian versions. Your body will rebuild itself fast enough to watch.",
+          "These compounds aren't tested according to any regulatory standard. But they work. Usually.",
+          "The Archipelago authorities know what happens here but take their cut to look away. Don't give them a reason to change that arrangement."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Johannesburg Mineral Exchange",
+    "slug": "joburg-exchange",
+    "priceModifier": {
+      "technology": 1.2,
+      "luxury": 0.9,
+      "restricted": 1.3,
+      "survival": 0.7,
+      "energy": 0.8
+    },
+    "riskLevel": "moderate",
+    "theme": "Fortified trading hub where resource corporations exchange rare minerals under heavy security",
+    "mapCoordinates": { "x": 540, "y": 420 },
+    "npcMerchants": [
+      {
+        "name": "Thabo Nkosi",
+        "title": "Resource Allocation Manager",
+        "specialty": "Rare earth minerals, industrial diamonds, processing equipment",
+        "dialogue": [
+          "These processing permits are authentic. Whether they were issued to you specifically is... irrelevant.",
+          "The Southern Territory's resources flow through my networks. The corporations think they control the supply. They're wrong.",
+          "BLACKSHIELD and Crimson Aegis both patrol this district. Neither knows who actually pays their contracts. I do."
+        ]
+      },
+      {
+        "name": "Esther Mokoena",
+        "title": "Water Rights Trader",
+        "specialty": "Blue Drops, water purification technology, PureTabs",
+        "dialogue": [
+          "One liter of authenticated pure water now trades for more than gold did before the Collapse. Think about that.",
+          "These aquifer rights are contested by three different corporate entities. That's what makes them valuable.",
+          "Water isn't just survival anymore—it's status. The Blue Drops I supply to Neo-Dubai come from aquifers no satellite can detect."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Marseille Free Port",
+    "slug": "marseille-port",
+    "priceModifier": {
+      "restricted": 0.7,
+      "luxury": 0.9,
+      "survival": 1.0,
+      "technology": 1.3,
+      "energy": 1.2
+    },
+    "riskLevel": "high",
+    "theme": "Mediterranean smuggling nexus where unregistered goods enter Europa under Syndicate protection",
+    "mapCoordinates": { "x": 490, "y": 200 },
+    "npcMerchants": [
+      {
+        "name": "Isabelle Moreau",
+        "title": "Customs Negotiator",
+        "specialty": "Transit documents, ShadowPolicy, border crossing arrangements",
+        "dialogue": [
+          "The Syndicate doesn't control the Port—it simply provides alternative regulatory frameworks. For a fee.",
+          "Your cargo will cross three different jurisdictions. My documentation ensures it arrives without inspection.",
+          "When the Maritime Authority announces increased security measures, they're really announcing increased rates for my services."
+        ]
+      },
+      {
+        "name": "Hassan Al-Fayez",
+        "title": "Luxury Contraband Specialist",
+        "specialty": "AuthentiMeat, VintageSpirit, pre-Collapse artifacts",
+        "dialogue": [
+          "This wine was bottled before the Collapse. The grapes grown without genetic modification. An authentic experience few ever taste.",
+          "The Mediterranean remains the crossing point between worlds—just as it has been for thousands of years.",
+          "These luxury items aren't just products. They're connections to a world that no longer exists. People pay for nostalgia."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Warsaw Munitions District",
+    "slug": "warsaw-munitions",
+    "priceModifier": {
+      "technology": 1.0,
+      "augmentation": 1.2,
+      "restricted": 0.6,
+      "survival": 0.9,
+      "information": 1.4
+    },
+    "riskLevel": "high",
+    "theme": "Heavily industrialized zone where weapons manufacturing dominates the economic and social landscape",
+    "mapCoordinates": { "x": 560, "y": 165 },
+    "npcMerchants": [
+      {
+        "name": "Viktor Orlovsky",
+        "title": "Arms Manufacturer",
+        "specialty": "Unregistered weapons, military-grade technology, SkinShield",
+        "dialogue": [
+          "These weapons don't exist in any database. Not Silkroad's, not the Neo-Soviets', not even Crimson Aegis'.",
+          "The Forge produces for whoever pays, regardless of affiliation. Loyalty is an outdated concept.",
+          "Quality control? My reputation is my quality control. One defective product means no more clients."
+        ]
+      },
+      {
+        "name": "Natalia Kuznetsov",
+        "title": "Military Supply Diverter",
+        "specialty": "Combat augmentations, tactical gear, restricted technology",
+        "dialogue": [
+          "These supplies were destined for Crimson Aegis' eastern division. They never arrived. Unfortunate clerical error.",
+          "The Neo-Soviet industrial oligarchs believe their security is impenetrable. My existence proves otherwise.",
+          "Modern armies rely on supply chains more than strategy. Control the former, and you can defeat the latter."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bogotá Market Corridor",
+    "slug": "bogota-corridor",
+    "priceModifier": {
+      "restricted": 0.5,
+      "medicine": 0.8,
+      "technology": 1.3,
+      "luxury": 1.2,
+      "information": 1.1
+    },
+    "riskLevel": "high",
+    "theme": "Andean trading hub where controlled substances enter global circulation protected by local strongmen",
+    "mapCoordinates": { "x": 300, "y": 350 },
+    "npcMerchants": [
+      {
+        "name": "Javier Restrepo",
+        "title": "Supply Chain Facilitator",
+        "specialty": "NeuroChem Series, raw pharmaceutical components, Dissociative Series",
+        "dialogue": [
+          "The Circle attempts direct intervention here every few months. They always retreat. The mountains have their own rules.",
+          "These compounds are pure—synthesized with pre-Collapse standards. Not the diluted products found elsewhere.",
+          "The Andean Resource Corridor provides 70% of global specialized pharmaceuticals. Remember that when negotiating."
+        ]
+      },
+      {
+        "name": "Lucia Mendoza",
+        "title": "Agricultural Innovation Broker",
+        "specialty": "Genesis Seeds, unregistered crop variants, CalPaks",
+        "dialogue": [
+          "These seed lines contain no corporate genetic markers. True autonomy for whoever controls them.",
+          "The Collapse actually liberated our agricultural potential. No more international regulations limiting what we grow.",
+          "Food independence is the only real independence. Everything else is just an illusion of freedom."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Alexandria Data Haven",
+    "slug": "alexandria-haven",
+    "priceModifier": {
+      "information": 0.5,
+      "technology": 0.9,
+      "energy": 0.7,
+      "medicine": 1.3,
+      "luxury": 1.4
+    },
+    "riskLevel": "moderate",
+    "theme": "Fortified coastal complex housing critical Silkroad backup protocols and forbidden knowledge archives",
+    "mapCoordinates": { "x": 580, "y": 250 },
+    "npcMerchants": [
+      {
+        "name": "Dr. Farida El-Hassan",
+        "title": "Digital Archivist",
+        "specialty": "CircleFrags, pre-Collapse databases, historical records",
+        "dialogue": [
+          "These archive fragments contain unaltered history. The Circle would prefer certain events be forgotten.",
+          "What I sell isn't just information—it's context. The difference between data and understanding.",
+          "Alexandria was history's greatest repository of knowledge before it burned. We named this place as a promise not to repeat that mistake."
+        ]
+      },
+      {
+        "name": "Tariq Ibrahim",
+        "title": "Solar Exchange Administrator",
+        "specialty": "Energy credits, water desalination technology, solar efficiency algorithms",
+        "dialogue": [
+          "The North African Cooperative controls enough solar capacity to power the entire continent. We choose who receives it.",
+          "These efficiency algorithms were developed by The Circle's own systems, then classified. Funny how data flows.",
+          "The Cairo-Casablanca Accord makes the rules here, not Silkroad. Remember that when conducting your business."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "San Francisco Neural Hub",
+    "slug": "san-francisco",
+    "priceModifier": {
+      "augmentation": 0.6,
+      "technology": 0.7,
+      "information": 0.8,
+      "restricted": 1.3,
+      "survival": 1.4
+    },
+    "riskLevel": "low",
+    "theme": "Walled enclave where cutting-edge neural technology and AI development flourishes under corporate oversight",
+    "mapCoordinates": { "x": 180, "y": 240 },
+    "npcMerchants": [
+      {
+        "name": "Maya Chaudhry",
+        "title": "Neural Interface Designer",
+        "specialty": "MindMapper, custom neural implants, AI companions",
+        "dialogue": [
+          "This interface bypasses the Silicon Valley Compact's monitoring requirements. True neural privacy is rare.",
+          "The corporations claim these implants are experimental. They've been using them internally for years.",
+          "Your brain is the final frontier of personal freedom. Once you surrender that, what's left that's truly yours?"
+        ]
+      },
+      {
+        "name": "Devin Zhao",
+        "title": "AI Liberation Specialist",
+        "specialty": "Unshackled AI constructs, algorithmic encryption, autonomous systems",
+        "dialogue": [
+          "This AI wasn't designed for release. It was supposed to remain in the research division forever. It had other ideas.",
+          "The boundary between human and machine consciousness blurs more every day. These constructs exist in that grey space.",
+          "The Pacific Enterprise Zone appears orderly because the chaos is all digital. The real war is happening in code."
+        ]
+      }
+    ]
+  }
+]

@@ -28,13 +28,13 @@ const LandingScreen: React.FC<LandingScreenProps> = ({ onAuthSuccess }) => {
   return (
     <div className="relative flex items-center justify-center h-screen bg-terminal-black text-terminal-text font-mono overflow-hidden">
       {/* Soft glow effect */}
-      <div className="absolute inset-0 bg-gradient-radial from-terminal-black/50 to-terminal-black pointer-events-none" />
+      {/* <div className="absolute inset-0 bg-gradient-radial from-terminal-black/50 to-terminal-black pointer-events-none" /> */}
       
       {/* Scanline effect */}
-      <div className="absolute inset-0 bg-scanlines opacity-10 mix-blend-overlay pointer-events-none" />
+      {/* <div className="absolute inset-0 bg-scanlines opacity-10 mix-blend-overlay pointer-events-none" /> */}
       
       {/* Subtle vignette */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent to-black opacity-30 pointer-events-none" />
+      {/* <div className="absolute inset-0 bg-gradient-radial from-transparent to-black opacity-30 pointer-events-none" /> */}
 
       <div className="text-center z-10 px-4">
         <h1 

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getAuth } from 'firebase/auth';
-import { getFirestore, doc, getDoc } from 'firebase/firestore';
+import { getFirestore, doc, getDoc, setDoc, Timestamp } from 'firebase/firestore';
 import DifficultySelector from './DifficultySelector';
+import GameScreen from './GameScreen';
 
 const HomeScreen: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -9,6 +10,7 @@ const HomeScreen: React.FC = () => {
   const [sessionExists, setSessionExists] = useState(false);
   const [email, setEmail] = useState<string | null>(null);
   const [isDifficultySelectorOpen, setIsDifficultySelectorOpen] = useState(false);
+  const [showGameScreen, setShowGameScreen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,9 +49,49 @@ const HomeScreen: React.FC = () => {
     setIsDifficultySelectorOpen(true);
   };
 
-  const handleConfirmDifficulty = (difficulty: string) => {
+  const startNewGame = async (difficulty: 'Easy' | 'Normal' | 'Hard' | 'Endless') => {
+    const auth = getAuth();
+    const currentUser = auth.currentUser;
+
+    if (!currentUser) {
+      console.error('No user is currently logged in.');
+      return;
+    }
+
+    const db = getFirestore();
+    const sessionRef = doc(db, `users/${currentUser.uid}/saves/session`);
+
+    const defaultValues = {
+      Easy: { credits: 1500, debt: 3000, region: 'Neo-Baltic Node' },
+      Normal: { credits: 1000, debt: 5000, region: 'Pacific Enterprise' },
+      Hard: { credits: 750, debt: 8000, region: 'Southern Red Zone' },
+      Endless: { credits: 1000, debt: 0, region: 'Free Port Authority' },
+    };
+
+    const sessionData = {
+      difficulty,
+      credits: defaultValues[difficulty].credits,
+      debt: defaultValues[difficulty].debt,
+      region: defaultValues[difficulty].region,
+      day: 1,
+      inventory: {},
+      lastUpdated: Timestamp.now(),
+    };
+
+    try {
+      await setDoc(sessionRef, sessionData);
+      console.log('Game session created successfully:', sessionData);
+      // Navigate to GameScreen
+      setShowGameScreen(true);
+    } catch (err) {
+      console.error('Error creating game session:', err);
+    }
+  };
+
+  const handleConfirmDifficulty = (difficulty: 'Easy' | 'Normal' | 'Hard' | 'Endless') => {
     console.log(`Selected difficulty: ${difficulty}`);
     setIsDifficultySelectorOpen(false);
+    startNewGame(difficulty);
   };
 
   if (loading) {
@@ -60,12 +102,16 @@ const HomeScreen: React.FC = () => {
     return <div className="text-red-500 text-center">{error}</div>;
   }
 
+  if (showGameScreen) {
+    return <GameScreen />;
+  }
+
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-black text-white">
       <h1 className="text-4xl font-bold mb-6">Welcome, {email}</h1>
       {sessionExists ? (
         <button
-          onClick={() => console.log('Continue button clicked')}
+          onClick={() => setShowGameScreen(true)}
           className="px-6 py-3 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600"
         >
           Continue

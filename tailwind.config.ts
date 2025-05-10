@@ -16,14 +16,21 @@ const config: Config = {
         'scanlines': 'repeating-linear-gradient(transparent 0px, transparent 1px, rgba(0, 0, 0, 0.25) 1px, rgba(0, 0, 0, 0.25) 2px)',
       },
       colors: {
-        'terminal-black': '#0d0d0d',
+        'terminal-black': '#0a0a0a',
         'terminal-text': '#e0e0e0',
         'terminal-cyan': '#00ffe0',
         'terminal-magenta': '#ff0080',
-        'terminal-error': '#ff0033',
+        'terminal-error': '#ff2b2b',
+        'magenta': {
+          400: '#ec4899',
+          500: '#d946ef',
+        },
       },
       fontFamily: {
         'mono': ['JetBrains Mono', 'IBM Plex Mono', 'monospace'],
+      },
+      boxShadow: {
+        'glow': '0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3)',
       },
       keyframes: {
         flicker: {

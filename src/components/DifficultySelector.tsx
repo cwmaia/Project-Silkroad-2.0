@@ -3,7 +3,7 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
 
-const difficulties = [
+const difficulties: { level: 'Easy' | 'Normal' | 'Hard' | 'Endless'; description: string }[] = [
   { level: 'Easy', description: 'Lower debt, more item availability, slower market volatility.' },
   { level: 'Normal', description: 'Standard debt, balanced supply/demand, regular challenge.' },
   { level: 'Hard', description: 'High debt, scarce inventory, frequent risk events.' },
@@ -13,9 +13,9 @@ const difficulties = [
 export default function DifficultySelector({ isOpen, onClose, onConfirm }: {
   isOpen: boolean;
   onClose: () => void;
-  onConfirm: (difficulty: string) => void;
+  onConfirm: (difficulty: 'Easy' | 'Normal' | 'Hard' | 'Endless') => void;
 }) {
-  const [selected, setSelected] = useState('Normal');
+  const [selected, setSelected] = useState<'Easy' | 'Normal' | 'Hard' | 'Endless'>('Normal');
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
